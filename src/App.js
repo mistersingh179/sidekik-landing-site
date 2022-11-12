@@ -8,33 +8,27 @@ import {
   Code,
   Grid,
   theme,
+  Container,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
+import WithSubnavigation from './components/WithSubnavigation';
+import CallToActionWithIllustration from './components/CallToActionWithIllustration';
+import SplitWithImage from './components/SplitWithImage';
+import LargeWithLogoLeft from './components/LargeWithLogoLeft';
+import TableOrSimpleGrid from './exp/TableOrSimpleGrid';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
+      <Container maxW={'container.xl'} p={0} align={'center'}>
+        <WithSubnavigation />
+        <CallToActionWithIllustration />
+        {/*<SplitWithImage />*/}
+        {/*<SplitWithImage imageFirst={true} />*/}
+        {/*<SplitWithImage />*/}
+        <LargeWithLogoLeft />
+      </Container>
     </ChakraProvider>
   );
 }
