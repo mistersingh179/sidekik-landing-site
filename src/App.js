@@ -9,14 +9,21 @@ import {
   Grid,
   theme,
   Container,
+  Divider,
+  Heading,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
 import WithSubnavigation from './components/WithSubnavigation';
 import CallToActionWithIllustration from './components/CallToActionWithIllustration';
-import SplitWithImage from './components/SplitWithImage';
 import LargeWithLogoLeft from './components/LargeWithLogoLeft';
 import TableOrSimpleGrid from './exp/TableOrSimpleGrid';
+import BuildUiRealTime from './components/features/BuildUiRealTime'
+import SupportsStructFeature from './components/features/SupportsStructFeature'
+import QualityOfLifeFeatures from './components/features/QualityOfLifeFeatures'
+import ImpersonateFeature from './components/features/ImpersonateFeature'
+import UseWithDeployedContracts
+  from './components/features/UseWithDeployedContracts'
 
 function App() {
   return (
@@ -24,9 +31,23 @@ function App() {
       <Container maxW={'container.xl'} p={0} align={'center'}>
         <WithSubnavigation />
         <CallToActionWithIllustration />
-        {/*<SplitWithImage />*/}
-        {/*<SplitWithImage imageFirst={true} />*/}
-        {/*<SplitWithImage />*/}
+
+        <Divider bg={'green'} my={10} />
+        <BuildUiRealTime />
+
+        <Divider bg={'green'} my={10} />
+        <SupportsStructFeature />
+
+        <Divider bg={'green'} my={10} />
+        <QualityOfLifeFeatures />
+
+        <Divider bg={'green'} my={10} />
+        <ImpersonateFeature />
+
+        <Divider bg={'green'} my={10} />
+        <UseWithDeployedContracts />
+
+        <Box my={10} />
         <LargeWithLogoLeft />
       </Container>
     </ChakraProvider>
