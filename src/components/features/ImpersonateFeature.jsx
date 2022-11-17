@@ -19,6 +19,14 @@ import ImpersonateAddressImage from '../../images/impersonate address.gif';
 export default function ImpersonateFeature() {
   return (
     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+      <Flex>
+        <Image
+          rounded={'md'}
+          alt={'feature image'}
+          src={ImpersonateAddressImage}
+          objectFit={'cover'}
+        />
+      </Flex>
       <VStack justify={'center'} align={'start'}>
         <Heading size={'lg'} mb={5}>
           Impersonate Accounts
@@ -28,14 +36,6 @@ export default function ImpersonateFeature() {
           typing their address.
         </Text>
       </VStack>
-      <Flex>
-        <Image
-          rounded={'md'}
-          alt={'feature image'}
-          src={ImpersonateAddressImage}
-          objectFit={'cover'}
-        />
-      </Flex>
     </SimpleGrid>
   );
 }

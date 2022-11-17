@@ -24,11 +24,13 @@ import QualityOfLifeFeatures from './components/features/QualityOfLifeFeatures'
 import ImpersonateFeature from './components/features/ImpersonateFeature'
 import UseWithDeployedContracts
   from './components/features/UseWithDeployedContracts'
+import InteractWithOtherContractsFeature
+  from './components/features/InteractWithOtherContractsFeature';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Container maxW={'container.xl'} p={0} align={'center'}>
+      <Container maxW={'container.xl'} align={'center'}>
         <WithSubnavigation />
         <CallToActionWithIllustration />
 
@@ -36,13 +38,16 @@ function App() {
         <BuildUiRealTime />
 
         <Divider bg={'green'} my={10} />
+        <InteractWithOtherContractsFeature />
+
+        <Divider bg={'green'} my={10} />
+        <ImpersonateFeature />
+
+        <Divider bg={'green'} my={10} />
         <SupportsStructFeature />
 
         <Divider bg={'green'} my={10} />
         <QualityOfLifeFeatures />
-
-        <Divider bg={'green'} my={10} />
-        <ImpersonateFeature />
 
         <Divider bg={'green'} my={10} />
         <UseWithDeployedContracts />
