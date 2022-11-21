@@ -31,9 +31,11 @@ export default function CallToActionWithIllustration() {
         you are still coding them.
       </Text>
       <Stack spacing={6} direction={'row'}>
-        <Button rounded={'full'} px={6}>
-          Learn more
-        </Button>
+        <Link href={'https://docs.sidekik.xyz'} _hover={{textDecoration: 'none'}}>
+          <Button rounded={'full'} px={6}>
+            Learn more
+          </Button>
+        </Link>
         <Link href={'https://app.sidekik.xyz'} _hover={{textDecoration: 'none'}}>
           <Button rounded={'full'} px={6} colorScheme={'purple'}>
             Enter App

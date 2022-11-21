@@ -36,7 +36,8 @@ export default function WithSubnavigation() {
         borderBottom={1}
         borderStyle={'solid'}
         borderColor={useColorModeValue('gray.200', 'gray.900')}
-        align={'center'}>
+        align={'center'}
+      >
         {/*<Flex*/}
         {/*  flex={{ base: 1, md: 'auto' }}*/}
         {/*  ml={{ base: -2 }}*/}
@@ -55,7 +56,8 @@ export default function WithSubnavigation() {
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             fontWeight={'bold'}
-            color={useColorModeValue('gray.800', 'white')}>
+            color={useColorModeValue('gray.800', 'white')}
+          >
             Sidekik
           </Text>
 
@@ -68,14 +70,16 @@ export default function WithSubnavigation() {
           flex={{ base: 1, md: 0 }}
           justify={'flex-end'}
           direction={'row'}
-          spacing={6}>
+          spacing={6}
+        >
           <Button
             as={'a'}
             fontSize={'sm'}
             fontWeight={400}
             variant={'link'}
             colorScheme={'purple'}
-            href={'#'}>
+            href={'https://docs.sidekik.xyz'}
+          >
             Tour
           </Button>
           <Button
@@ -84,17 +88,20 @@ export default function WithSubnavigation() {
             fontWeight={400}
             variant={'link'}
             colorScheme={'purple'}
-            href={'#'}>
+            href={'https://docs.sidekik.xyz'}
+          >
             Docs
           </Button>
-          {/*<Button*/}
-          {/*  fontSize={'sm'}*/}
-          {/*  fontWeight={600}*/}
-          {/*  colorScheme={'purple'}*/}
-          {/*  href={'#'}*/}
-          {/* >*/}
-          {/*  Enter App*/}
-          {/*</Button>*/}
+          <Button
+            as={'a'}
+            fontSize={'sm'}
+            fontWeight={400}
+            variant={'outline'}
+            colorScheme={'purple'}
+            href={'http://app.sidekik.xyz'}
+          >
+            Launch App
+          </Button>
         </Stack>
       </Flex>
 
@@ -112,7 +119,7 @@ const DesktopNav = () => {
 
   return (
     <Stack direction={'row'} spacing={4}>
-      {NAV_ITEMS.map((navItem) => (
+      {NAV_ITEMS.map(navItem => (
         <Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
@@ -125,7 +132,8 @@ const DesktopNav = () => {
                 _hover={{
                   textDecoration: 'none',
                   color: linkHoverColor,
-                }}>
+                }}
+              >
                 {navItem.label}
               </Link>
             </PopoverTrigger>
@@ -137,9 +145,10 @@ const DesktopNav = () => {
                 bg={popoverContentBgColor}
                 p={4}
                 rounded={'xl'}
-                minW={'sm'}>
+                minW={'sm'}
+              >
                 <Stack>
-                  {navItem.children.map((child) => (
+                  {navItem.children.map(child => (
                     <DesktopSubNav key={child.label} {...child} />
                   ))}
                 </Stack>
@@ -160,13 +169,15 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
       display={'block'}
       p={2}
       rounded={'md'}
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
+      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
+    >
       <Stack direction={'row'} align={'center'}>
         <Box>
           <Text
             transition={'all .3s ease'}
             _groupHover={{ color: 'pink.400' }}
-            fontWeight={500}>
+            fontWeight={500}
+          >
             {label}
           </Text>
           <Text fontSize={'sm'}>{subLabel}</Text>
@@ -178,7 +189,8 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
           justify={'flex-end'}
           align={'center'}
-          flex={1}>
+          flex={1}
+        >
           <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
@@ -191,8 +203,9 @@ const MobileNav = () => {
     <Stack
       bg={useColorModeValue('white', 'gray.800')}
       p={4}
-      display={{ md: 'none' }}>
-      {NAV_ITEMS.map((navItem) => (
+      display={{ md: 'none' }}
+    >
+      {NAV_ITEMS.map(navItem => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
     </Stack>
@@ -212,10 +225,12 @@ const MobileNavItem = ({ label, children, href }) => {
         align={'center'}
         _hover={{
           textDecoration: 'none',
-        }}>
+        }}
+      >
         <Text
           fontWeight={600}
-          color={useColorModeValue('gray.600', 'gray.200')}>
+          color={useColorModeValue('gray.600', 'gray.200')}
+        >
           {label}
         </Text>
         {children && (
@@ -236,9 +251,10 @@ const MobileNavItem = ({ label, children, href }) => {
           borderLeft={1}
           borderStyle={'solid'}
           borderColor={useColorModeValue('gray.200', 'gray.700')}
-          align={'start'}>
+          align={'start'}
+        >
           {children &&
-            children.map((child) => (
+            children.map(child => (
               <Link key={child.label} py={2} href={child.href}>
                 {child.label}
               </Link>
